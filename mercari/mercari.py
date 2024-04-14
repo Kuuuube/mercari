@@ -95,6 +95,8 @@ def fetch(url, data):
 
 # not sure if the v1 prefix ever changes, but from quick testing, doesn't seem like it
 def pageToPageToken(page):
+    if page == 0:
+        return ""
     return "v1:{}".format(page)
 
 # returns an generator for Item objects
